@@ -8,9 +8,7 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Product data
   try {
     const infoTag = await Tag.findAll({
-      include: [{
-        model: Product,
-      }],
+      include: [{model: Product}],
     })
     res.status(200).json(infoTag);
   } catch (err) {res.status(500).json(err)}
@@ -20,14 +18,14 @@ router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
   try {
-    const infoTag = await Tag.findOne(req.params.id, {
+    const infoTag = await Tag.findByPk(req.params.id, {
       include: [{model: Product}],
     })
     if (!infoTag) {
       res.status(400).json({ message: 'Incorrect Credentials!' });
       return;
     }
-    res.status(200).json(infoCategory);
+    res.status(200).json(infoTag);
   } catch (err) {res.status(500).json(err)}
 });
 
@@ -43,7 +41,6 @@ router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
   try {
     const updateTag = await Tag.update({
-      id: req.body.id,
       tag_name: req.body.tag_name,
     },
     {
