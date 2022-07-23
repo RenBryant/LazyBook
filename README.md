@@ -1,6 +1,16 @@
 # LazyBook
 
-### Acceptance Criteria
+
+## Table of Contents
+
+  * [Acceptance Criteria](#acceptance-criteria)
+  * [Installation](#installation)
+  * [Links](#links)  
+  * [Usage](#usage)
+  * [Technologies](#technologies)
+  * [Repo Data](#repo)
+
+## Acceptance Criteria
 
 GIVEN a functional Express.js API
 WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
@@ -15,86 +25,39 @@ WHEN I test API POST, PUT, and DELETE routes in Insomnia
 THEN I am able to successfully create, update, and delete data in my database
 
 
-## Database Models
-Use the schema.sql file in the db folder to create your database using MySQL shell commands. Use environment variables to store sensitive data, like your MySQL username, password, and database name.
+## Installation
+To install the necessary dependencies, run the following command:
 
-Database Models
-Your database should contain the following four models, including the requirements listed for each model:
+```
+npm i
+```
 
-1. Category
+in the package.json file which is located in the root directory.
 
-- id
-- Integer
-- Doesn't allow null values
-- Set as primary key
-- Uses auto increment
-- category_name
-- String
-- Doesn't allow null values
+### Running the application
 
-2. Product
+Use the command npm start in the root folder!
 
-- id
-- Integer
-- Doesn't allow null values
-- Set as primary key
-- Uses auto increment
-- product_name
-- String
-- Doesn't allow null values
-- price
-- Decimal
-- Doesn't allow null values
-- Validates that the value is a decimal
-- stock
-- Integer
-- Doesn't allow null values
-- Set a default value of 10
-- Validates that the value is numeric
-- category_id
-- Integer
-- References the category model's id
 
-3. Tag
+## Links
+![Video](./)
 
-- id
-- Integer
-- Doesn't allow null values
-- Set as primary key
-- Uses auto increment
-- tag_name
-- String
 
-4. ProductTag
 
-- id
-- Integer
-- Doesn't allow null values
-- Set as primary key
-- Uses auto increment
-- product_id
-- Integer
-- References the product model's id
-- tag_id
-- Integer
-- References the tag model's id
+## Usage
+In this application, the user is able to create, update, and delete information in a mySQL database for different products, categories, and tags.
 
-## Associations
-You'll need to execute association methods on your Sequelize models to create the following relationships between them:
 
-- Product belongs to Category, as a category can have multiple products but a product can only belong to one category.
+## Technologies
+The application contains the following technologies:
 
-- Category has many Product models.
+```
+console.table
+mysql2
+inquirer
 
-- Product belongs to many Tag models. Using the ProductTag through model, allow products to have multiple tags and tags to have many products.
+```
 
-- Tag belongs to many Product models.
 
-## Fill Out the API Routes to Perform RESTful CRUD Operations
-Fill out the unfinished routes in product-routes.js, tag-routes.js, and category-routes.js to perform create, read, update, and delete operations using your Sequelize models.
-
-## Seed the Database
-After creating the models and routes, run npm run seed to seed data to your database so that you can test your routes.
-
-## Sync Sequelize to the Database on Server Start
-Create the code needed in server.js to sync the Sequelize models to the MySQL database on server start.
+## Repo Data
+This repo was contributed by RenBryant. I am a computer science student, a full-time worker, and a coding enthusiast! I love learning new things about computers and how they work and enjoy working on projects. Here is my GitHub Profile! [RenBryant](https://github.com/RenBryant). Thank you for checking out this project!
