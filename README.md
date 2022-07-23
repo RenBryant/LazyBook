@@ -49,9 +49,7 @@ In this application, the user is able to create, update, and delete information 
 
 
 ## Future Work
-When I try to add the mySQL database I am getting this error: 
-ERROR 1045 (28000): Access denied for user 'ODBC'@'localhost' (using password: NO)
-Have tried multiple different solutions and need help finding the answer. My environmental var is correct, my mysql shell lets me log in after mysql -u root -p and then entering my password, but that is as far as it goes.
+A couple of routes errors that needs to be fixed.
 
 ## Technologies
 The application contains the following technologies:
