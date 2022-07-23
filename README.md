@@ -48,13 +48,19 @@ Use the command npm start in the root folder!
 In this application, the user is able to create, update, and delete information in a mySQL database for different products, categories, and tags.
 
 
+## Future Work
+When I try to add the mySQL database I am getting this error: 
+ERROR 1045 (28000): Access denied for user 'ODBC'@'localhost' (using password: NO)
+Have tried multiple different solutions and need help finding the answer. My environmental var is correct, my mysql shell lets me log in after mysql -u root -p and then entering my password, but that is as far as it goes.
+
 ## Technologies
 The application contains the following technologies:
 
 ```
-console.table
+dotenv
 mysql2
-inquirer
+express
+sequelize
 
 ```
 
